@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rajeev Maharjan | Civil / Site / Structural Engineer</title>
+  <style>
+    :root {
+      --bg: #f4f6f9;
+      --card-bg: #ffffff;
+      --text: #1f2937;
+      --text-light: #6b7280;
+      --border: #e5e7eb;
+      --accent: #2563eb;
+      --tag-bg: #dbeafe;
+      --tag-text: #1e40af;
+      --sidebar-bg: #f8fafc;
+      --shadow: 0 4px 12px rgba(0,0,0,0.05);
+    }
+    [data-theme="dark"] {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --text: #f1f5f9;
+      --text-light: #94a3b8;
+      --border: #334155;
+      --accent: #3b82f6;
+      --tag-bg: #1e3a5f;
+      --tag-text: #93c5fd;
+      --sidebar-bg: #16202f;
+      --shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; transition: background 0.3s, color 0.3s, border-color 0.3s; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      padding: 2rem;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    h1 { font-size: 1.8rem; font-weight: 700; color: var(--text); }
+    .subtitle { font-size: 1.05rem; color: var(--accent); font-weight: 500; }
+    .contact { display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; font-size: 0.9rem; color: var(--text-light); margin-top: 0.5rem; }
+    .contact span:not(:last-child)::after { content: "|"; margin-left: 1rem; color: var(--border); }
+    
+    .theme-toggle {
+      background: var(--sidebar-bg);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.5rem 0.8rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .theme-toggle:hover { border-color: var(--accent); }
+
+    .layout { display: grid; grid-template-columns: 280px 1fr; gap: 2rem; }
+    @media (max-width: 768px) { .layout { grid-template-columns: 1fr; } }
+
+    .sidebar { background: var(--sidebar-bg); padding: 1.5rem; border-radius: 10px; border: 1px solid var(--border); }
+    .content { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    h2::before { content: ""; display: inline-block; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; }
+
+    .skill-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+    .skill-item { background: var(--card-bg); padding: 0.5rem; border-radius: 6px; text-align: center; font-weight: 500; font-size: 0.9rem; border: 1px solid var(--border); }
+    
+    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag { background: var(--tag-bg); color: var(--tag-text); padding: 0.3rem 0.7rem; border-radius: 16px; font-size: 0.82rem; font-weight: 500; }
+
+    .exp-item { margin-bottom: 0.9rem; padding-left: 1.2rem; position: relative; }
+    .exp-item::before { content: "▸"; position: absolute; left: 0; color: var(--accent); }
+
+    .project-card { background: var(--sidebar-bg); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--accent); margin-bottom: 1rem; }
+    .project-card strong { display: block; margin-bottom: 0.3rem; }
+
+    .cert { background: #f0fdf4; border: 1px solid #bbf7d0; padding: 0.8rem; border-radius: 8px; font-weight: 500; font-size: 0.95rem; }
+    [data-theme="dark"] .cert { background: #064e3b; border-color: #10b981; color: #d1fae5; }
+
+    @media print {
+      body { background: white; padding: 0; }
+      .container { box-shadow: none; padding: 1rem; border-radius: 0; }
+      .theme-toggle { display: none !important; }
+      .sidebar, .project-card, .skill-item, .tag, .cert { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div>
+        <h1>Rajeev Maharjan</h1>
+        <div class="subtitle">Civil / Site / Structural Engineer</div>
+        <div class="contact">
+          <span>Kathmandu, Nepal</span>
+          <span>rajeev.maharjan70@gmail.com</span>
+          <span>+977-9860477646</span>
+          <span>https://www.linkedin.com/in/rajeev-maharjan-38a52939a </span>
+        </div>
+      </div>
+      <button class="theme-toggle" id="themeBtn" aria-label="Toggle dark mode">🌙 Dark</button>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <h2>Education</h2>
+        <p><strong>Bachelor of Civil Engineering</strong><br>Pulchowk Campus, Lalitpur<br>2017 – 2022</p>
+        <br>
+        <h2>Technical Skills</h2>
+        <div class="skill-grid">
+          <div class="skill-item">ETABS</div>
+          <div class="skill-item">SAFE</div>
+          <div class="skill-item">SAP2000</div>
+          <div class="skill-item">AutoCAD</div>
+          <div class="skill-item">Excel VBA</div>
+          <div class="skill-item">QGIS</div>
+        </div>
+        <br>
+        <h2>Coding & Automation</h2>
+        <div class="tags">
+          <span class="tag">VBA Macro</span>
+          <span class="tag">Excel Formulas</span>
+          <span class="tag">Design Automation</span>
+          <span class="tag">Data Filtering</span>
+          <span class="tag">Qty Analysis</span>
+          <span class="tag">BBS Automation</span>
+          <span class="tag">HTML/JS</span>
+        </div>
+        <br>
+        <h2>Certification</h2>
+        <div class="cert">Nepal Engineering Council<br>(Civil “A” Category)</div>
+      </aside>
+
+      <main class="content">
+        <section>
+          <h2>Professional Summary</h2>
+          <p>Civil and Structural Engineer experienced in structural analysis, site supervision, estimation, and project execution. Skilled in RCC and steel structural modeling, foundation design, and workflow automation using Excel VBA.</p>
+        </section>
+
+        <section>
+          <h2>Experience</h2>
+          <div class="exp-item"><strong>Civil / Structural Engineer</strong> – City Planning Commission (2024–2025)</div>
+          <div class="exp-item"><strong>Civil / Site Engineer</strong> – Government Construction Projects (2022–2024)</div>
+          <div class="exp-item"><strong>Civil Engineer Intern</strong> – Yuva Construction (2022)</div>
+        </section>
+
+        <section>
+          <h2>Selected Projects</h2>
+          <div class="project-card">
+            <strong>School Building Structural Analysis (5 Blocks, 4.5 Storey)</strong>
+            <p>Complete RCC analysis, seismic checks, and foundation design.</p>
+          </div>
+          <div class="project-card">
+            <strong>RCC Cantilever Slab Design Automation Tool</strong>
+            <p>Excel VBA-based automated slab design and reinforcement optimization.</p>
+          </div>
+          <div class="project-card">
+            <strong>Bar Bending Schedule Automation</strong>
+            <p>Automated reinforcement quantity extraction and summarization.</p>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const btn = document.getElementById('themeBtn');
+    const html = document.documentElement;
+    const saved = localStorage.getItem('theme');
+    if (saved === 'dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      html.setAttribute('data-theme', 'dark');
+      btn.innerHTML = '☀️ Light';
+    }
+    btn.addEventListener('click', () => {
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      html.setAttribute('data-theme', isDark ? '' : 'dark');
+      btn.innerHTML = isDark ? '🌙 Dark' : '☀️ Light';
+      localStorage.setItem('theme', isDark ? '' : 'dark');
+    });
+  </script>
+</body>
+</html>
